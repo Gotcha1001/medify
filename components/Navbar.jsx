@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { LayoutDashboard, Stethoscope, Sparkles, Banknote } from "lucide-react"
-import { useClerk, UserButton, useUser } from "@clerk/nextjs"
+import { Show, useClerk, UserButton, useUser } from "@clerk/nextjs"
 import { div } from "framer-motion/client"
 
 const Navbar = () => {
@@ -37,6 +37,9 @@ const Navbar = () => {
                         <span className="text-base-content font-extrabold tracking-tight">Med</span>
                         <span className="text-info font-black tracking-tight">ify</span>
                     </h3>
+                    <Show when={{ plan: "premium" }}>
+                        <span className="badge badge-xs badge-info relative bottom-1">Premium</span>
+                    </Show>
                 </Link>
             </div>
             {/* Navlinks - Desktop */}
