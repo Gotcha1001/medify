@@ -76,7 +76,7 @@ const DoctorsPage = () => {
                     {!isLoading && doctors.length > 0 && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                             {doctors.map((doctor) => (
-                                <DoctorCard key={doctor.slug} doctor={doctor} />
+                                <DoctorCard key={doctor.id} doctor={doctor} />
                             ))}
                         </div>
                     )}
